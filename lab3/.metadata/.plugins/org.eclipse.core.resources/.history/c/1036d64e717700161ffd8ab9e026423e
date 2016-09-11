@@ -1,0 +1,13 @@
+
+public class step3 {
+public static void main(String[] args)
+{
+	float a = 1.0f;
+	float b = 3.0f;
+	double f=a/b - 1.0f/3.0f;
+	System.out.println(f);
+	double x = (a/b - 1.0f/3.0f) * 1.0e9f;
+	System.out.println(x);
+	}
+	//Float.isNaN(float)
+}

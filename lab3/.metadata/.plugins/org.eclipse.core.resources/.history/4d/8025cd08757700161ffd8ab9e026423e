@@ -1,0 +1,26 @@
+
+import java.util.Scanner;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+public class step4 {
+public static void main (String[] args)
+{
+	/*int parametr; //число знаков после запятой
+	System.out.println("Введите точность сравнения: ");
+	Scanner in = new Scanner(System.in);
+	parametr=in.nextInt();*/
+	
+	
+	float a = 0.3f;
+	float b = 0.4f;
+	float sum = a + b;
+	float c = 0.7f;
+	float aaaaa=new BigDecimal(sum).setScale(6, RoundingMode.HALF_UP).floatValue();
+	float bb=new BigDecimal(c).setScale(6, RoundingMode.HALF_UP).floatValue();
+	System.out.println(aaaaa == bb);
+	System.out.println("|f3-f4|<1e-6: "+( Math.abs(sum-c) < 1e-6 ));
+
+	//Float.isNaN(float)
+	}
+}

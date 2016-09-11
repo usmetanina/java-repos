@@ -1,0 +1,13 @@
+
+public class step2 {
+	public static void main(String[] args)
+	{
+	float a, b,f;
+	a=123456789;
+	b=123456789;     
+	f=a-b;	
+	System.out.println(f);
+
+	//Float.isNaN(float)
+	}
+}

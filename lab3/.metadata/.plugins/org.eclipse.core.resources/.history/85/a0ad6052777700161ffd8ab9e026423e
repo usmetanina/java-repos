@@ -1,0 +1,31 @@
+
+import java.util.Scanner;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+public class step4 {
+public static void main (String[] args)
+{
+	int parametr; //число знаков после запятой
+	System.out.println("Введите точность сравнения: ");
+	Scanner in = new Scanner(System.in);
+	parametr=in.nextInt();
+	
+	float a = 0.3f;
+	float b = 0.4f;
+	float sum = a + b;
+	float c = 0.7f;
+	
+	System.out.println(sum == c);
+	//Float.isNaN(float)
+	
+	System.out.println(round(a,b,parametr));
+	}
+
+public static boolean round(float firstValue,float secondValue, int scale) 
+{
+	float v1=(float)(Math.round(firstValue * Math.pow(10, scale)) / Math.pow(10, scale));
+	float v2=(float)(Math.round(secondValue * Math.pow(10, scale)) / Math.pow(10, scale));
+	return v1==v2;
+}
+}

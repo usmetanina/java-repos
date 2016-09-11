@@ -1,0 +1,19 @@
+
+public class step1 {
+public static void main(String[] args)
+{
+
+	float x = 0;
+	while (x == x+1)
+	{
+		System.out.println(x);
+	}
+	
+	/*float a, b,f;
+	a=123456789;
+	b=123456788;     
+	f=a-b;	
+	System.out.println(f);*/
+
+}
+}

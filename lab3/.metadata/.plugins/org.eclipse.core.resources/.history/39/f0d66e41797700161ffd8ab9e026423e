@@ -1,0 +1,34 @@
+
+import java.util.Scanner;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+public class step4 {
+public static void main (String[] args)
+{
+	int parametr; //число знаков после запятой
+	System.out.println("Введите точность сравнения: ");
+	Scanner in = new Scanner(System.in);
+	parametr=in.nextInt();
+	
+	
+	float a = 0.3f;
+	float b = 0.4f;
+	float sum = a + b;
+	float c = 0.7f;
+	//float aa=new BigDecimal(sum).setScale(7, RoundingMode.HALF_UP).floatValue();
+	//float bb=new BigDecimal(c).setScale(7, RoundingMode.HALF_UP).floatValue();
+	
+	System.out.println(compare(Float.POSITIVE_INFINITY,Float.NEGATIVE_INFINITY,parametr));
+	//Float.isNaN(float)
+	}
+
+public static boolean compare(float sum,float c,int parametr)
+{
+	float aaaaa=(float)(Math.round(sum * Math.pow(10, parametr)) / Math.pow(10, parametr));
+	float bb=(float)(Math.round(c * Math.pow(10, parametr)) / Math.pow(10, parametr));
+
+	return aaaaa == bb;
+	}
+
+}

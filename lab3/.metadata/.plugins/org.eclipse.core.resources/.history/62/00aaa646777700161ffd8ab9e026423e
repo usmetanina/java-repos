@@ -1,0 +1,41 @@
+
+import java.util.Scanner;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+public class step4 {
+public static void main (String[] args)
+{
+	/*int parametr; //число знаков после запятой
+	System.out.println("Введите точность сравнения: ");
+	Scanner in = new Scanner(System.in);
+	parametr=in.nextInt();*/
+	
+	
+	float a = 0.3f;
+	float b = 0.4f;
+	float sum = a + b;
+	float c = 0.7f;
+	float nn=0.7f;
+	System.out.println(c == nn);
+	//float aaaaa=new BigDecimal(sum).setScale(7, RoundingMode.HALF_UP).floatValue();
+	//float bb=new BigDecimal(c).setScale(7, RoundingMode.HALF_UP).floatValue();
+	//float aaaaa=round(sum,6);
+	//float bb=round(c,6);
+	//System.out.println(aaaaa == bb);
+	System.out.println(sum == c);
+	//float ss=Float.isNaN(b);
+	//System.out.println("|f3-f4|<1e-6: "+( Math.abs(sum-c) < 1e-6 ));
+
+	//Float.isNaN(float)
+	
+	//System.out.println(round());
+	}
+
+public static boolean round(float firstValue,float secondValue, int scale) 
+{
+	float v1=(float)(Math.round(firstValue * Math.pow(10, scale)) / Math.pow(10, scale));
+	float v2=(float)(Math.round(secondValue * Math.pow(10, scale)) / Math.pow(10, scale));
+	return v1==v2;
+}
+}
