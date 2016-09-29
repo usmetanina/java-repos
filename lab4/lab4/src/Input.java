@@ -1,8 +1,9 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Input {
 	
-	public void inputPoint(Polyline polyline)
+	public void inputPoints(Polyline polyline)
 	{
 		int n;
 		System.out.println("»звестно кол-во точек? 1-да, 2-нет!");
@@ -41,5 +42,19 @@ public class Input {
 				if (coord.length>1) polyline.addPoint(new Point(Double.parseDouble(coord[0]),Double.parseDouble(coord[1])));
 			}
 		}
+	}
+	
+	ArrayList<Point> requestPoint(Polyline polyline)
+	{
+		System.out.println("¬ведите координаты точки, с которой хотите сравнить вершины ломаной:");
+		String str=null;
+		
+		Scanner in = new Scanner(System.in);
+		str=in.nextLine();
+		String[] coord = str.split(" ");
+		
+		Point point=new Point(Double.parseDouble(coord[0]),Double.parseDouble(coord[1]));
+		ArrayList<Point> points=polyline.searchPoints(point);
+		return points;
 	}
 }

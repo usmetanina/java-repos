@@ -23,12 +23,13 @@ public class Polyline {
 		return length;
 	}
 	
-	public String readPolyline()
+	@Override
+	public String toString()
 	{
-		String stringPolyline = points.get(0).readCoordinates()+"-";
+		String stringPolyline = points.get(0)+"-";
 		for (int i=1;i<points.size();i++)
 		{
-			stringPolyline=stringPolyline+points.get(i).readCoordinates()+"-";
+			stringPolyline=stringPolyline+points.get(i)+"-";
 		}
 		return stringPolyline;
 	}
@@ -38,7 +39,7 @@ public class Polyline {
 		ArrayList<Point> samePoint= new ArrayList<Point>();
 		for (int i=0;i<points.size();i++)
 		{
-			if (points.get(i).compare(point)) //System.out.println("Совпала вершина с индексом:"+ i);
+			if (points.get(i).equals(point)) //System.out.println("Совпала вершина с индексом:"+ i);
 				samePoint.add(points.get(i));
 		}
 		return samePoint;
