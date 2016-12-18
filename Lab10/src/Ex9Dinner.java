@@ -54,7 +54,6 @@ class Philosopher implements Runnable {
                 Thread.sleep((int) (Math.random() * 10));
             } catch (InterruptedException e) {
             }
-            synchronized (locks) {
                 System.out.println("Philosopher " + number + " starts eating");
 
                 takeForks();
@@ -68,7 +67,7 @@ class Philosopher implements Runnable {
                 putForks();
             }
         }
-    }
+
 
     // ######## Start Strategy #########
     static volatile ReentrantLock[] locks = new ReentrantLock[5];
@@ -81,9 +80,18 @@ class Philosopher implements Runnable {
 
     void takeForks() {
         // TODO synchronize
-        locks[fork1.number].lock();
-        locks[fork2.number].lock();
+        while (true)
+        {
+            locks[fork1.number].lock();
+            if (locks[fork2.number].tryLock())
+                break;
+            locks[fork1.number].unlock();
 
+            locks[fork2.number].lock();
+            if (locks[fork1.number].tryLock())
+                break;
+            locks[fork2.number].unlock();
+        }
         fork1.take(number);
         fork2.take(number);
     }
